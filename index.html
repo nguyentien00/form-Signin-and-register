@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="Website Icon" type="png" href="https://i.pinimg.com/564x/4e/d5/39/4ed5397f808ef00d6e0f1ade963a8215.jpg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login & Register | Tiendev</title>
+    <script src="https://kit.fontawesome.com/c9f5871d83.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<video style=" width:100%;"  src="video.mp4" autoplay loop muted></video>
+    <div class="container">
+        <header class="header">
+            <nav class="nav">
+                <p style="cursor:pointer; font-size: 36px; font-family:cursive; " class="logo"><img style="border-radius: 100% 100%;" src="414704639_872833578176389_5400456240711778101_n.jpg">Tiendev</p>
+            </nav>
+            <div class="nav-right">
+                <button style="font-family:cursive; " class="btn white-btn" id="loginbtn" onclick="login()">LOGIN</button>
+                <button style="font-family:cursive; " class="btn" id="registerbtn" onclick="register()">REGISTER</button>
+            </div> 
+        </header>
+
+        <div class="form">
+            <div class="login">
+            <div class="left" id="login">
+                <form>
+                    <div class="top">
+                        <p style="font-family:cursive; ">Do not have an account sign in? <a style="font-family:cursive; " href="#" onclick="register()">register</a></p>
+                        <h2>Login</h2>
+                    </div>
+                    <div class="input">
+                        <input style="font-family:cursive; " type="text" name="text" placeholder="Username" required>
+                        <span> <i class="fa-solid fa-user"></i></span>
+                    </div>
+                    <div class="input">
+                        <input style="font-family:cursive; " type="password" name="password" id="password" placeholder="Password" required>
+                        <span><i class="fa-solid fa-eye" id="bg" onclick="showHint()" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="forget">
+                        <label style="font-family:cursive; font-size: 15px; "><input type="checkbox">remember</label>
+                        <p  class="mb-0 mt-4 text-center"><a style="font-family:cursive; " href="#" class="link">Forgot password?</a></p>
+                    </div>
+                    <div class="button">
+                        <a href="#">
+                            <button style="font-family:cursive; " >Login</button>
+                          </a>
+                    </div>
+                    <div class="or">
+                        <p>or</p>
+                        <div class="with">
+                            <p class="mb-0 mt-4 text-center">
+                                <a href="#" class="link"><i class="fa-brands fa-facebook fb"></i></a>
+                                <a href="#" class="link"><i class="fa-brands fa-google fb" ></i></a>
+                                <a href="#" class="link"><i class="fa-brands fa-tiktok fb"></i></a>
+                            </p>
+                            
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="right" id="register">
+                
+                <form>
+                    <div class="top">
+                        <a></a>
+                        <p style="font-family:cursive; ">Do you already have a login account?<a style="font-family:cursive; " href="#" onclick="login()">login</a></p>
+                        <h2 style="font-family:cursive; " >register</h2>
+                    </div>
+                    <div class="two-input">
+                        <div class="input">
+                         <input style="font-family:cursive; " type="text" placeholder="First name">
+                         <span> <i class="fa-solid fa-user"></i></span>
+                        </div>
+                        <div class="input">
+                         <input style="font-family:cursive; " type="text" placeholder="Last name">
+                         <span> <i class="fa-solid fa-user"></i></span>
+                        </div>
+                    </div>
+                    <div class="input">
+                        <input style="font-family:cursive; " type="email" placeholder="Email">
+                        <span><i class="fa-solid fa-envelope"></i></span>
+                    </div>
+                    <div class="input">
+                        <input style="font-family:cursive; " type="password" name="password" id="password" placeholder="Password" required>
+                        <span><i class="fa-solid fa-eye" id="bg" onclick="showHint()" aria-hidden="true"></i></span>
+                    </div>
+                    <div class="forget">
+                        <label style="font-family:cursive; "><input type="checkbox">remember</label>
+                        <p style="font-family:cursive; " class="mb-0 mt-4 text-center"><a style="font-family:cursive; " href="#" class="link">term & conditions</a></p>
+                    </div>
+                    <div class="button">
+                        <a href="#">
+                            <button style="font-family:cursive; ">register</button>
+                        </a>
+                    </div> 
+                </form>
+            </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var a = document.getElementById('loginbtn');
+        var b = document.getElementById('registerbtn');
+        var x = document.getElementById('login');
+        var y = document.getElementById('register');
+        function login()
+        {
+            x.style.left = '1px';
+            y.style.right = '-390px';
+            a.className += ' white-btn';   
+            b.className = 'btn';
+            x.style.opacity = 1;
+            y.style.opacity = 0;
+        }
+        function register()
+        {
+            x.style.left = '-390px';
+            y.style.right = '1px';
+            a.className = 'btn';   
+            b.className += ' white-btn';
+            x.style.opacity = 0;
+            y.style.opacity = 1;
+        }
+    </script>
+    <script>
+        var st = false;
+        function showHint(){
+            if(st){
+                document.getElementById("password").setAttribute('type','password');
+                document.getElementById("bg").style.color = 'black';
+                st = false;
+            }
+            else{
+                document.getElementById("password").setAttribute('type','text');
+                document.getElementById("bg").style.color = 'white';
+                st = true;
+            }
+        }
+    </script>
+</body>
+</html>
